@@ -13,6 +13,7 @@ makedepends=('git' 'cmake')
 source=(
 	"git+${url}.git#tag=v.${pkgver}"
 	"git+https://github.com/Inokinoki/qefivar.git"
+	"${pkgname}-wayland.desktop"
 )
 sha256sums=('SKIP'
             'SKIP'
