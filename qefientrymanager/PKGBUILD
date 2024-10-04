@@ -13,7 +13,6 @@ makedepends=('git' 'cmake')
 source=(
 	"git+${url}.git#tag=v.${pkgver}"
 	"git+https://github.com/Inokinoki/qefivar.git"
-	"${pkgname}-wayland.desktop"
 )
 sha256sums=('SKIP'
             'SKIP'
@@ -45,8 +44,6 @@ Exec=pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY QEFIEntryManager
 ' "${pkgname}.desktop"
 	install -Dm644 "${pkgname}.desktop" -t "${pkgdir}/usr/share/applications/"
 
-	# Desktop file (Wayland)
-	install -Dm644 "${srcdir}/${pkgname}-wayland.desktop" -t "${pkgdir}/usr/share/applications/"
 
 	# Icon
 	install -Dm644 cc.inoki.qefientrymanager.png -t "${pkgdir}/usr/share/icons/hicolor/96x96/apps/"
