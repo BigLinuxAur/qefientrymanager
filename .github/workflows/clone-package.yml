@@ -48,7 +48,8 @@ jobs:
         run: |
           gitfolder=$(find -type f -name PKGBUILD | sed 's/PKGBUILD//')
           cd $gitfolder
-          rm *.desktop
+          sed -i '/wayland.desktop/d' PKGBUILD
+          sed -i '/(Wayland)/d' PKGBUILD
       #     sed -i "/\bdepends=/s/(/\('xpto\' 'xpto3\' 'xpto2\' /" PKGBUILD
       #     sed -i "/makedepends=/s/(/\('xpto\' 'xpto2\' 'xpto3\' /" PKGBUILD
       #     sed -i '/\bdepends=/!b; :a; n; a\    '\'xpto\' PKGBUILD
